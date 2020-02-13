@@ -4,7 +4,8 @@ using System.Text;
 
 namespace Lab12_ClassUML
 {
-    class Person
+    //Person class that can be a student or staff member
+    public class Person
     {
         private string name;
         private string address;
@@ -21,10 +22,22 @@ namespace Lab12_ClassUML
             set { name = value; }
         }
 
+        public Person()
+        {
+
+        }
+
+        //Constructor for Person class.  Name and address are captured here for students and staff members
         public Person(string name, string address)
         {
             this.name = name;
             this.address = address;
+        }
+
+        //overrides ToString method for Person object to provide the students name and address
+        public override string ToString()
+        {
+            return base.ToString() + " Persons name is: "+Name+". "+ " Persons address is: "+address;
         }
     }
 }
